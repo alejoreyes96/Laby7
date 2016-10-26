@@ -12,21 +12,27 @@ public class Book implements GameThing, Readable, Openable {
       public String getDescription()
 
       {
-
-            return "This book appears to be old and its pages filled with dust. It's also quite heavy.";
-
+    	  if(isOpen == true){
+            return " This book appears to be old and its pages filled with dust. It's also quite heavy.\n The book is currently open.";
+    	  }
+    	  else{
+    		  return " This book appears to be old and its pages filled with dust. It's also quite heavy.\n The book is currently closed.";
+    	  }
       }
       public void read()
 
       {
-
-            System.out.println("It is written in some ancient language. You cannot decipher it yet.");
-
+    	  if(isOpen == true){
+            System.out.println("It is written in some ancient language. I cannot decipher it yet.");
+    	  }
+    	  else{
+    		  System.out.println("I still don't have the skillset to read closed books.");
+    	  }
       }
       public void open() {
     	  if( isOpen == false){
     	  
-    	  System.out.print("As the book opens, you can feel a mysterious aura coming from it.");
+    	  System.out.print("As the book opens, I can feel a mysterious aura coming from it.");
     	  isOpen = true;
     	  }
     	  else{

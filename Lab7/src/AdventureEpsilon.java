@@ -6,12 +6,14 @@ public class AdventureEpsilon
 	public static Box theBox = new Box();
 	public static Sign theSign = new Sign();
 	public static Book theBook = new Book();
+	public static Apple theApple = new Apple();
 	public static void main(String[] args)
 	{
 		//Populate the room
 		theRoom.addThing(theBook);
 		theRoom.addThing(theBox);
 		theRoom.addThing(theSign);
+		theRoom.addThing(theApple);
 
 		//Create additional useful objects
 		Scanner keyboard = new Scanner(System.in); 
