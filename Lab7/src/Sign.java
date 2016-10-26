@@ -1,4 +1,4 @@
-public class Sign implements GameThing, Readable
+public class Sign implements GameThing, Readable, Edible
 
 {
 
@@ -6,7 +6,7 @@ public class Sign implements GameThing, Readable
 
       {
 
-            return "A wooden sign";
+            return "A chocolate-made sign";
 
       }
 
@@ -14,7 +14,7 @@ public class Sign implements GameThing, Readable
 
       {
 
-                return "This is a small wooden sign. There seems to be some partially faded writing in it.";
+                return "This is a small chocolate-made sign. There seems to be some partially faded writing in it.";
 
       }
 
@@ -22,8 +22,13 @@ public class Sign implements GameThing, Readable
 
       {
 
-            System.out.println("You can see the following message: \"John was here!\"");
+            System.out.println("You can see the following message: \"NO TRESPASSING! EVIL WITCH AHEAD!\"");
 
+      }
+      public void eat(){
+    	  
+    	  System.out.println("The chocolate sign tasted so delicious and creamy! \n Was the sign read though?....");
+    	  AdventureEpsilon.theRoom.removeThing(AdventureEpsilon.theSign);
       }
 
 }

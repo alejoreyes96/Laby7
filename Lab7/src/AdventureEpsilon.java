@@ -39,6 +39,7 @@ public class AdventureEpsilon
 			System.out.println("5. Read something");
 			System.out.println("6. Open something");
 			System.out.println("7. Close something");
+			System.out.println("8. Eat something");
 			System.out.println("99. Quit this game");
 			System.out.print("Your choice? >>>");
 			int mainMenuChoice = keyboard.nextInt();
@@ -149,7 +150,7 @@ public class AdventureEpsilon
 			                  }
 			                  else
 			                  {
-			                        System.out.println("That's not something you can open!");
+			                        System.out.println("Stop! That's not something you can open!");
 			                  }
 			                  System.out.println();
 			            }
@@ -179,7 +180,37 @@ public class AdventureEpsilon
 			                  }
 			                  else
 			                  {
-			                        System.out.println("That's not something you can close!");
+			                        System.out.println("What do you think you're doing?! That's not something you can close!");
+			                  }
+			                  System.out.println();
+			            }
+
+			            break;
+				  case 8:
+
+			            System.out.println("Which thing do you want to eat?");
+
+			            theRoom.listContents();
+
+			                System.out.print("Your choice? (Enter an unlisted number to go back to the main menu) >>>");
+
+			            thingChoice = keyboard.nextInt();
+
+			            System.out.println();
+
+			            if (thingChoice >= 1 && thingChoice <= theRoom.getThingCount())
+			            {
+			                  GameThing thing = theRoom.getThingByIndex(thingChoice);
+			                  if (thing instanceof Edible) {
+			                	  
+			                       Edible edibleThing = (Edible)thing;
+
+			                        edibleThing.eat();
+			                        
+			                  }
+			                  else
+			                  {
+			                        System.out.println("I'm not eating that. You trying to kill me?!");
 			                  }
 			                  System.out.println();
 			            }
